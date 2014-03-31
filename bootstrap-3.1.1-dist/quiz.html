@@ -1,0 +1,259 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title> Quiz </title>
+
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    
+     <script src="js/respond.js" ></script>
+
+    <body>
+    	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <div class="container">
+
+         <div >
+              <div class="row">
+      	         <div class="col-md-3 col-xs-5">
+                     <img class="img-responsive" alt="Responsive image" src="http://www.cardiomyopathy.org/assets/snippets/phpThumb/phpThumb.php?src=/assets/images/news/question.jpg" > </img>
+                 </div>
+                 <div class="col-md-7 col-xs-7">
+                     <h1>Quiz<h1><br>
+                 </div>       
+              </div>
+         </div>
+
+          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+              <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+              <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+              <div class="item active">
+                <img src="http://i.telegraph.co.uk/multimedia/archive/02207/maths_2207203b.jpg" alt="...">
+                 <div class="carousel-caption">
+                   <h3 data-has-caption="1"><span>
+                      Maths               </span></h3>
+                    <p>Test Your Math skills</p>
+                 </div>
+             </div>
+    
+             <div class="item">
+               <img src="http://english.tau.ac.il/sites/default/files/styles/reaserch_main_image_580_x_330/public/sackler%20physics%20cropped.jpg" alt="...">
+               <div class="carousel-caption">
+                 <h3>Physics</h3>
+                 <p>Test Your Physics skills</p>
+               </div>
+             </div>
+
+              <div class="item">
+                <img src="http://apcg.meteo.noa.gr/upload/lib/photos/infrastructure/acl2.jpg" alt="...">
+                <div class="carousel-caption">
+                  <h3>Chemistry</h3>
+                 Test Your Chemistry skills
+                </div>
+             </div>
+           </div>
+         
+           <!-- Controls -->
+           <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+             <span class="glyphicon glyphicon-chevron-left"></span>
+           </a>
+           <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+             <span class="glyphicon glyphicon-chevron-right"></span>
+           </a>
+         </div>
+       
+          <div class="row">
+             <div class="col-md-5">
+             	 <script>
+                     $(function () {
+                     $('#quiztabs a:first').tab('show')
+                     })
+                 </script>
+                 <ul class="nav nav-tabs" id="quiztabs">
+                     <li class="active"><a href="#Rules" data-toggle="tab">Rules</a></li>
+ 					 <li><a href="#Maths" data-toggle="tab">Maths</a></li>
+ 					 <li><a href="#Physics" data-toggle="tab">Physics</a></li>
+ 					 <li><a href="#Chemistry" data-toggle="tab">Chemistry</a></li>
+	              </ul>
+	             <div class="tab-content">
+	             	  <div class="tab-pane active" id="Rules">
+           	             <p></br>You must score a minimum of 3</p>
+                      </div>
+	             	  <div class="tab-pane" id="Maths">
+           	             <p></br><span id="1mok" style="display:none" class="glyphicon glyphicon-ok"></span>
+           	             	<span id="1mno" style="display:none" class="glyphicon glyphicon-remove"></span>Q1. The sum of 3 and 3 is(3+3=):</p>
+                         <input type="radio" id="moption1" value="6"> 6<br>
+                         <input type="radio" id="moption2" value="7"> 7<br>
+                         <input type="radio" id="moption3" value="8"> 8<br>
+                         <input type="radio" id="moption4" value="9"> 9<br><br>
+                         <div style="display:none" id="malertsuccess" class="alert alert-success">You have answered it right</div>
+                         <div style="display:none" id="malertdanger" class="alert alert-danger">You have answered it wrong</div>
+                         <button type="button" onclick=mathcorrection() id="Mathsubmit" class="btn btn-default">Submit</button><br>
+           	             <ul class="pager">
+ 					         <li class="next"><a href="#">Next &rarr;</a></li>
+				         </ul>
+                      </div>
+                      <div class="tab-pane" id="Physics">
+           	             <p></br><span id="1pok" style="display:none" class="glyphicon glyphicon-ok"></span><span id="1pno" style="display:none" class="glyphicon glyphicon-remove"></span>Q1. The formula for Force is:</p>
+                         <input type="radio" id="poption1" value="mass*acceleration"> mass*acceleration<br>
+                         <input type="radio" id="poption2" value="mass/acceleration"> mass/acceleration<br>
+                         <input type="radio" name="poption3" value="mass+acceleration"> mass+acceleration<br>
+                         <input type="radio" name="poption4" value="mass-acceleration"> mass-acceleration<br><br>
+                         <div style="display:none" id="palertsuccess" class="alert alert-success">You have answered it right</div>
+                         <div style="display:none" id="palertdanger" class="alert alert-danger">You have answered it wrong</div>
+                         <button type="button" onclick=physcorrection() id="Physubmit" class="btn btn-default">Submit</button><br>
+           	             <ul class="pager">
+ 					         <li class="next"><a href="#">Next &rarr;</a></li>
+				         </ul>
+                      </div>
+                      <div class="tab-pane" id="Chemistry">
+           	             <p></br><span id="1cok" style="display:none" class="glyphicon glyphicon-ok"></span><span id="1cno" style="display:none" class="glyphicon glyphicon-remove"></span>Q1. The chemical formula for water is:</p>
+                         <input type="radio" id="coption1" value="H2O"> H2O<br>
+                         <input type="radio" id="coption2" value="HO"> HO<br>
+                         <input type="radio" id="coption3" value="H3O"> H3O<br>
+                         <input type="radio" id="coption4" value="H4O"> H4O<br><br>
+                         <div style="display:none" id="calertsuccess" class="alert alert-success">You have answered it right</div>
+                         <div style="display:none" id="calertdanger" class="alert alert-danger">You have answered it wrong</div>
+                         <button type="button" onclick=chemcorrection() id="Chemsubmit" class="btn btn-default">Submit</button><br>
+           	             <ul class="pager">
+ 					         <li class="next"><a href="#">Next &rarr;</a></li>
+				         </ul>
+                      </div>
+                   </div>
+               </div>    
+               <div class="col-md-7">
+                   </br>
+                     <div class="row panel panel-default">
+                           <table class="table table-condensed">
+                              <tr>
+              	          	       <td>Test</td>
+                 			         <td>Correct</td>
+                			         <td>Wrong</td>
+               				         <td>Total</td>
+              			          </tr>
+              			          <tr>
+              						 <td>Maths</td>
+                					 <td id="mathcorrect">NA</td>
+                					 <td id="mathwrong">NA</td>
+                					 <td id="mathtotal">NA</td>
+              					  </tr>
+              					   <tr>
+              						 <td>Physics</td>
+                					 <td id="phycorrect">NA</td>
+                					 <td id="phywrong">NA</td>
+                					 <td id="phytotal">NA</td>
+              					  </tr>
+              					  <tr>
+              						 <td>Chemistry</td>
+                					 <td id="chemcorrect">NA</td>
+                					 <td id="chemwrong">NA</td>
+                					 <td id="chemtotal">NA</td>
+               					 </tr>
+           					 </table>
+                		 </div>
+                     </div>
+           		 </div>
+          </div>
+    </body>
+
+    <script>
+      function physcorrection(){
+      	if(document.getElementById("phycorrect").innerHTML=="NA"){
+      		document.getElementById("phycorrect").innerHTML=0;
+      	}
+      	if(document.getElementById("phywrong").innerHTML=="NA"){
+      		document.getElementById("phywrong").innerHTML=0;
+      	}
+      	if(document.getElementById("phytotal").innerHTML=="NA"){
+      		document.getElementById("phytotal").innerHTML=0;
+      	}
+
+      	if(document.getElementById("poption1").checked==true){
+      		document.getElementById("1pok").style.display="block";
+      		document.getElementById("palertsuccess").style.display="block";
+      		var correct=document.getElementById("phycorrect").innerHTML;
+            document.getElementById("phycorrect").innerHTML=parseInt(correct)+1;
+            var total=parseInt(document.getElementById("phycorrect").innerHTML)-parseInt(document.getElementById("phywrong").innerHTML);
+            document.getElementById("phytotal").innerHTML=total;
+      	}
+      	else{
+      		document.getElementById("1pno").style.display="block";
+      		document.getElementById("palertdanger").style.display="block";
+      		var wrong=document.getElementById("phywrong").innerHTML;
+      		document.getElementById("phywrong").innerHTML=parseInt(wrong)+1;
+      		var total=parseInt(document.getElementById("phycorrect").innerHTML)-parseInt(document.getElementById("phywrong").innerHTML);
+            document.getElementById("phytotal").innerHTML=total;
+      	}
+
+      }
+
+      function chemcorrection(){
+          if(document.getElementById("chemcorrect").innerHTML=="NA"){
+      		 document.getElementById("chemcorrect").innerHTML=0;
+      	   }
+          if(document.getElementById("chemwrong").innerHTML=="NA"){
+      		 document.getElementById("chemwrong").innerHTML=0;
+      	   }
+      	  if(document.getElementById("chemtotal").innerHTML=="NA"){
+      		 document.getElementById("chemtotal").innerHTML=0;
+      	   }
+
+      	  if(document.getElementById("coption1").checked==true){
+      		 document.getElementById("1cok").style.display="block";
+      		 document.getElementById("calertsuccess").style.display="block";
+      		 var correct=document.getElementById("chemcorrect").innerHTML;
+             document.getElementById("chemcorrect").innerHTML=parseInt(correct)+1;
+             var total=parseInt(document.getElementById("chemcorrect").innerHTML)-parseInt(document.getElementById("chemwrong").innerHTML);
+             document.getElementById("chemtotal").innerHTML=total;
+      	  }
+      	  else{
+      		 document.getElementById("1cno").style.display="block";
+      		 document.getElementById("calertdanger").style.display="block";
+      		 var wrong=document.getElementById("chemwrong").innerHTML;
+      		 document.getElementById("chemwrong").innerHTML=parseInt(wrong)+1;
+      		 var total=parseInt(document.getElementById("chemcorrect").innerHTML)-parseInt(document.getElementById("chemwrong").innerHTML);
+             document.getElementById("chemtotal").innerHTML=total;
+      	   }
+        }
+
+      function mathcorrection(){
+          if(document.getElementById("mathcorrect").innerHTML=="NA"){
+      		 document.getElementById("mathcorrect").innerHTML=0;
+      	   }
+          if(document.getElementById("mathwrong").innerHTML=="NA"){
+      		 document.getElementById("mathwrong").innerHTML=0;
+      	   }
+      	  if(document.getElementById("mathtotal").innerHTML=="NA"){
+      		 document.getElementById("mathtotal").innerHTML=0;
+      	   }
+
+      	  if(document.getElementById("moption1").checked==true){
+      		 document.getElementById("1mok").style.display="block";
+      		 document.getElementById("malertsuccess").style.display="block";
+      		 var correct=document.getElementById("mathcorrect").innerHTML;
+             document.getElementById("mathcorrect").innerHTML=parseInt(correct)+1;
+             var total=parseInt(document.getElementById("mathcorrect").innerHTML)-parseInt(document.getElementById("mathwrong").innerHTML);
+             document.getElementById("mathtotal").innerHTML=total;
+      	  }
+      	  else{
+      		 document.getElementById("1mno").style.display="block";
+      		 document.getElementById("malertdanger").style.display="block";
+      		 var wrong=document.getElementById("mathwrong").innerHTML;
+      		 document.getElementById("mathwrong").innerHTML=parseInt(wrong)+1;
+      		 var total=parseInt(document.getElementById("mathcorrect").innerHTML)-parseInt(document.getElementById("mathwrong").innerHTML);
+             document.getElementById("mathtotal").innerHTML=total;
+      	   }
+      }
+
+    </script>
+</head>

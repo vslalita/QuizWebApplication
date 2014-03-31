@@ -1,0 +1,19 @@
+/* this is a custom css stylesheet */
+.img-responsive{
+    display: block;
+    text-indent: -1000px; /* hide link text */
+    overflow: hidden;
+    background-size: cover;
+    width: 100%;
+    height: 150px;
+    float: left;
+}
+
+.carousel img{
+  width: 40%;
+  height: 40%;
+  max-height: 40%;
+}
+.carousel-caption {
+    color: black;
+}
